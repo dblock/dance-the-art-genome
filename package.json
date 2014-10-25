@@ -1,8 +1,8 @@
 {
-  "name": "art-genome-choreography",
+  "name": "dance-the-art-genome",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/dblock/art-genome-choreography",
+  "homepage": "https://github.com/dblock/dance-the-art-genome",
   "author": {
     "name": "Daniel Doubrovkine",
     "email": "dblock@dblock.org",
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/dblock/art-genome-choreography.git"
+    "url": "git://github.com/dblock/dance-the-art-genome.git"
   },
   "bugs": {
-    "url": "https://github.com/dblock/art-genome-choreography/issues"
+    "url": "https://github.com/dblock/dance-the-art-genome/issues"
   },
   "scripts": {
     "start": "make s"
@@ -44,7 +44,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/dblock/art-genome-choreography/blob/master/LICENSE"
+      "url": "https://github.com/dblock/dance-the-art-genome/blob/master/LICENSE"
     }
   ]
 }
