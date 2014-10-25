@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Dance the Art Genome
+    link( type='text/css', rel='stylesheet', href=('/assets/genes' + sd.CSS_EXT) )
+  body
+    h1 Dance the Art Genome!
+    #scripts
+      != sharify.script()
+      script( src='/assets/genes' + sd.JS_EXT )

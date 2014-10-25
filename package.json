@@ -1,0 +1,46 @@
+{
+  "name": "art-genome-choreography",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://github.com/dblock/art-genome-choreography",
+  "author": {
+    "name": "Daniel Doubrovkine",
+    "email": "dblock@dblock.org",
+    "url": "http://code.dblock.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dblock/art-genome-choreography.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dblock/art-genome-choreography/issues"
+  },
+  "scripts": {
+    "start": "make s"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "sharify": "*",
+    "coffee-script": "*",
+    "node-env-file": "*"
+  },
+  "devDependencies": {
+    "jquery": "*",
+    "browserify": "*",
+    "stylus": "*",
+    "jadeify": "*",
+    "browserify-dev-middleware": "*",
+    "benv": "*",
+    "html5": "*",
+    "sqwish": "*",
+    "uglify-js": "*",
+    "caching-coffeeify": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/dblock/art-genome-choreography/blob/master/LICENSE"
+    }
+  ]
+}
