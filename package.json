@@ -23,7 +23,11 @@
     "jade": "*",
     "sharify": "*",
     "coffee-script": "*",
-    "node-env-file": "*"
+    "node-env-file": "*",
+    "superagent": "*",
+    "moment": "*",
+    "traverson": "*",
+    "underscore": "*"
   },
   "devDependencies": {
     "jquery": "*",

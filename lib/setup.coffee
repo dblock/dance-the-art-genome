@@ -2,12 +2,13 @@ express = require 'express'
 sharify = require 'sharify'
 path = require 'path'
 fs = require 'fs'
+artsyXappMiddleware = require './xapp-middleware'
 
 module.exports = (app) ->
 
   # Inject some configuration & constant data into sharify
   sd = sharify.data =
-    API_URL: process.env.API_URL
+    ARTSY_API_URL: process.env.ARTSY_API_URL
     NODE_ENV: process.env.NODE_ENV
     JS_EXT: (if 'production' is process.env.NODE_ENV then '.min.js' else '.js')
     CSS_EXT: (if 'production' is process.env.NODE_ENV then '.min.css' else '.css')
@@ -25,10 +26,13 @@ module.exports = (app) ->
       src: path.resolve(__dirname, '../')
       transforms: [require('jadeify'), require('caching-coffeeify')]
 
-  # Test only
-  if 'test' is sd.NODE_ENV
-    # Mount fake API server
-    app.use '/__api', require('../test/helpers/integration.coffee').api
+  console.log "Artsy API at #{process.env.ARTSY_API_URL} ..."
+
+  # Artsy API
+  app.use artsyXappMiddleware
+    apiUrl: process.env.ARTSY_API_URL
+    clientId: process.env.ARTSY_API_CLIENT_ID
+    clientSecret: process.env.ARTSY_API_CLIENT_SECRET
 
   # Mount apps
   app.use require '../apps/genes'
