@@ -1,15 +1,71 @@
+@import '../../../node_modules/nib'
+@import '../../../node_modules/artsy-ezel-components/stylus_lib/typography'
+json('../../../node_modules/artsy-ezel-components/stylus_lib/colors.json')
+
+global-reset()
+
+@keyframes pulse
+  0% {
+    background-color purple-light-color
+  }
+  50% {
+    background-color purple-color
+  }
+  100% {
+    background-color purple-light-color
+  }
+
+@keyframes flicker
+  0% {
+    opacity 0
+  }
+  100% {
+    opacity 1
+  }
+
+*
+  box-sizing border-box
+
 body
-  font-family 'Helvetica', 'Arial', 'sans-serif'
   color #444
   padding 10px 100px
   line-height 1.4em
+  transition background-color 0.3s
+  animation pulse 0.6s infinite
+  position relative
+  transform translate3d(0,0,0)
+
+html, body
+  height 100%
+  display block
+
+a
+  color white
 
 h1, h2
   text-align center
+  color white
+  width 100%
+  left 0
+  position absolute
+  top 50%
+
 h1
-  font-size 21px
-  margin-bottom 20px
+  font-size 40px
+  margin-top -(@font-size / 2)
+  avant-garde()
+  &.flicker
+    animation flicker 0.1s infinite
+
 h2
   font-weight normal
   font-size 18px
+  margin-top 40px
+  garamond()
+  width 800px
+  line-height 1.2em
+  left calc(50% - 400px)
 
+.geometry
+  transition all 1s
+  position absolute

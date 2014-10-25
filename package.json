@@ -27,7 +27,9 @@
     "superagent": "*",
     "moment": "*",
     "traverson": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "artsy-ezel-components": "git://github.com/artsy/artsy-ezel-components.git",
+    "marked": "*"
   },
   "devDependencies": {
     "jquery": "*",
@@ -39,7 +41,8 @@
     "html5": "*",
     "sqwish": "*",
     "uglify-js": "*",
-    "caching-coffeeify": "*"
+    "caching-coffeeify": "*",
+    "nib": "*"
   },
   "licenses": [
     {
