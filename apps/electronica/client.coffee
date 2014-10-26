@@ -10,8 +10,10 @@ $ ->
       $('h1').addClass('flicker')
       changeGene = ->
         $('h1').removeClass('flicker')
-        $('h1').html _.sample(genes).name
-        $('h2').html marked _.sample(genes).description
+        gene = _.sample(genes)
+        link = gene._links.permalink.href
+        $('h1').html "<a href=\"#{link}\" target=\"_blank\">#{gene.name}</a>"
+        $('h2').html marked gene.description
       setInterval changeGene, 10000
       setTimeout changeGene, 2000
     , 2000
