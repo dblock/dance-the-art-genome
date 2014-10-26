@@ -158,6 +158,7 @@ h2 {
   left: calc(50% - 400px);
 }
 .geometry {
+  z-index: -1;
   -webkit-transition: all 1s;
   -moz-transition: all 1s;
   -o-transition: all 1s;
