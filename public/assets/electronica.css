@@ -1,0 +1,259 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+  color: #000;
+  background: #fff;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #444;
+  padding: 10px 100px;
+  line-height: 1.4em;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  -o-transition: background-color 0.3s;
+  -ms-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  -webkit-animation: pulse 0.6s infinite;
+  -moz-animation: pulse 0.6s infinite;
+  -o-animation: pulse 0.6s infinite;
+  -ms-animation: pulse 0.6s infinite;
+  animation: pulse 0.6s infinite;
+  position: relative;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+html,
+body {
+  height: 100%;
+  display: block;
+}
+a {
+  color: #fff;
+}
+h1,
+h2 {
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 50%;
+}
+h1 {
+  font-size: 40px;
+  margin-top: -20px;
+  font-family: 'ITC Avant Garde Gothic W04', 'AvantGardeGothicITCW01D 731075', 'AvantGardeGothicITCW01Dm', 'Helvetica', 'sans-serif';
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h1.flicker {
+  -webkit-animation: flicker 0.1s infinite;
+  -moz-animation: flicker 0.1s infinite;
+  -o-animation: flicker 0.1s infinite;
+  -ms-animation: flicker 0.1s infinite;
+  animation: flicker 0.1s infinite;
+}
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+  margin-top: 40px;
+  font-family: 'Adobe Garamond W08', 'adobe-garamond-pro', 'AGaramondPro-Regular', 'Times New Roman', 'Times', 'serif';
+  -webkit-font-smoothing: antialiased;
+  width: 800px;
+  line-height: 1.2em;
+  left: calc(50% - 400px);
+}
+.geometry {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+  position: absolute;
+}
+@-moz-keyframes pulse {
+  0% {
+    background-color: #b179d4;
+  }
+  50% {
+    background-color: #6a0bc1;
+  }
+  100% {
+    background-color: #b179d4;
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #b179d4;
+  }
+  50% {
+    background-color: #6a0bc1;
+  }
+  100% {
+    background-color: #b179d4;
+  }
+}
+@-o-keyframes pulse {
+  0% {
+    background-color: #b179d4;
+  }
+  50% {
+    background-color: #6a0bc1;
+  }
+  100% {
+    background-color: #b179d4;
+  }
+}
+@keyframes pulse {
+  0% {
+    background-color: #b179d4;
+  }
+  50% {
+    background-color: #6a0bc1;
+  }
+  100% {
+    background-color: #b179d4;
+  }
+}
+@-moz-keyframes flicker {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@-webkit-keyframes flicker {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@-o-keyframes flicker {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}
+@keyframes flicker {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+}

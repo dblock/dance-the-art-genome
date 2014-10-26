@@ -4,7 +4,7 @@ _ = require 'underscore'
 marked = require 'marked'
 
 $ ->
-  $.get '/genes', (genes) ->
+  $.get '/electronica/genes', (genes) ->
     names = _.map genes, (gene) -> "#{gene.name}: #{gene.description}"
     setTimeout ->
       $('h1').addClass('flicker')

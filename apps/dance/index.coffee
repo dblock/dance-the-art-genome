@@ -6,6 +6,4 @@ app.set "views", __dirname + "/templates"
 app.set "view engine", "jade"
 app.get "/", routes.index
 
-app.get "/genes", routes.genes
-
 

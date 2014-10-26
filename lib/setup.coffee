@@ -35,7 +35,8 @@ module.exports = (app) ->
     clientSecret: process.env.ARTSY_API_CLIENT_SECRET
 
   # Mount apps
-  app.use require '../apps/genes'
+  app.use require '../apps/dance'
+  app.use require '../apps/electronica'
 
   # Mount static middleware for sub apps, components, and project-wide
   fs.readdirSync(path.resolve __dirname, '../apps').forEach (fld) ->
