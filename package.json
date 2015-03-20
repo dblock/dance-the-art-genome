@@ -44,6 +44,9 @@
     "caching-coffeeify": "*",
     "nib": "*"
   },
+  "engines": {
+    "node": "0.10.x"
+  },
   "licenses": [
     {
       "type": "MIT",
