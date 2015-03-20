@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title Dance the Art Genome: Algorithms
+    link( type='text/css', rel='stylesheet', href=('/assets/algorithms' + sd.CSS_EXT) )
+  body
+    #wrap
+      #inner-wrap
+        textarea.area
+    #scripts
+      != sharify.script()
+      script( src='//code.jquery.com/jquery-2.1.3.min.js' )
+      script( src='/assets/algorithms' + sd.JS_EXT )

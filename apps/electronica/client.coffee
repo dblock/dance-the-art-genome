@@ -1,4 +1,3 @@
-$ = require 'jquery'
 sd = require("sharify").data
 _ = require 'underscore'
 marked = require 'marked'
