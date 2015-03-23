@@ -36,7 +36,7 @@ dance = (genes, durations) ->
     $('textarea').fadeIn 400, ->
       setTimeout ->
         dance _.without(genes, gene), _.rest(durations)
-      , duration * 10
+      , duration * 1000
 
 getMaxGeneCount = (genes) ->
   max_gene = _.max genes, (gene) -> gene.artworks_count + gene.artists_count
