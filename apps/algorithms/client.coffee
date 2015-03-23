@@ -1,7 +1,8 @@
 sd = require("sharify").data
 _ = require 'underscore'
 
-require '../../lib/vendor/typetype/jquery.typetype.coffee'
+
+maxGeneCount = 100
 
 dance = (genes, durations) ->
   return if _.isEmpty(durations)
@@ -9,15 +10,20 @@ dance = (genes, durations) ->
 
   duration = _.first(durations)
   gene = _.sample genes
+  relativeSize = 200 + 1000 * (gene.artworks_count + gene.artists_count) / maxGeneCount
 
   $('textarea').fadeOut 400, ->
-    $('textarea').val('')
+    $('textarea')
+      .val("#{gene.name}")
+      .css('font-size', "#{relativeSize}%")
     $('textarea').fadeIn 400, ->
-      $('textarea').typetype "#{gene.name}, #{gene.artworks_count} artworks, #{gene.artists_count} artists",
-        callback: ->
-          setTimeout ->
-            dance _.without(genes, gene), _.rest(durations)
-          , duration * 100
+      setTimeout ->
+        dance _.without(genes, gene), _.rest(durations)
+      , duration * 100
+
+getMaxGeneCount = (genes) ->
+  max_gene = _.max genes, (gene) -> gene.artworks_count + gene.artists_count
+  max_gene.artworks_count + max_gene.artists_count
 
 $ ->
 
@@ -26,6 +32,8 @@ $ ->
     total_minutes = 15
     slow_changes_per_minute = 3
     max_changes_per_minute = 10
+
+    maxGeneCount = getMaxGeneCount(genes)
 
     movements = [
       23, 22, 21, # minute 1
