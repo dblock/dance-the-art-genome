@@ -1,6 +1,6 @@
 sd = require("sharify").data
-_ = require 'underscore'
-
+_ = require('underscore')
+Packery = require('packery')
 
 maxGeneCount = 100
 
@@ -14,11 +14,23 @@ dance = (genes, durations) ->
   relativeSize = 400 + 1000 * (gene.artworks_count + gene.artists_count) / maxGeneCount
   rotation = _.random(0, 360)
 
+  $count = null
+
   $('textarea').fadeOut 400, ->
     $('textarea')
       .val("#{gene.name}")
       .css('font-size', "#{relativeSize}%")
       .css('transform', "rotate(#{rotation}deg)")
+
+    $("#artworks_count_#{gene.artworks_count}")
+      .addClass('selected')
+      .hide()
+      .fadeIn 400, ->
+      $("#artists_count_#{gene.artists_count}")
+        .addClass('selected')
+        .fadeIn 400
+        .hide()
+
     $('textarea').fadeIn 400, ->
       setTimeout ->
         dance _.without(genes, gene), _.rest(durations)
@@ -27,6 +39,34 @@ dance = (genes, durations) ->
 getMaxGeneCount = (genes) ->
   max_gene = _.max genes, (gene) -> gene.artworks_count + gene.artists_count
   max_gene.artworks_count + max_gene.artists_count
+
+fillNumbers = (genes) ->
+  $numbers = $('#numbers')
+
+  _.each genes, (gene) ->
+
+    relativeSize = 150 + 1000 * gene.artworks_count / maxGeneCount
+    rotation = _.random(0, 360)
+    number = $("<div class='number' id='artworks_count_#{gene.artworks_count}'>#{gene.artworks_count}</div>")
+    number
+      .css('transform', "rotate(#{rotation}deg)")
+      .css('font-size', "#{relativeSize}%")
+
+    $numbers.append(number)
+
+    relativeSize = 150 + 1000 * gene.artists_count / maxGeneCount
+    rotation = _.random(0, 360)
+    number = $("<div class='number' id='artists_count_#{gene.artworks_count}'>#{gene.artists_count}</div>")
+    number
+      .css('transform', "rotate(#{rotation}deg)")
+      .css('font-size', "#{relativeSize}%")
+
+    $numbers.append(number)
+
+
+  new Packery('#numbers', { itemSelector: '.number', gutter: 20 })
+
+  $numbers.css('position', 'absolute')
 
 $ ->
 
@@ -37,6 +77,7 @@ $ ->
     max_changes_per_minute = 10
 
     maxGeneCount = getMaxGeneCount(genes)
+    fillNumbers(genes)
 
     movements = [
       23, 22, 21, # minute 1

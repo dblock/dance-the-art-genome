@@ -29,7 +29,8 @@
     "traverson": "*",
     "underscore": "*",
     "artsy-ezel-components": "git://github.com/artsy/artsy-ezel-components.git",
-    "marked": "*"
+    "marked": "*",
+    "packery": "*"
   },
   "devDependencies": {
     "jquery": "*",
