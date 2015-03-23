@@ -135,3 +135,11 @@ textarea {
 #numbers .selected {
   color: #bbb;
 }
+#about {
+  font-size: 20px;
+  font-family: "Futura";
+  padding-left: 150px;
+}
+#about a {
+  text-decoration: none;
+}

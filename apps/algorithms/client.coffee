@@ -4,9 +4,11 @@ Packery = require('packery')
 
 maxGeneCount = 100
 
+about = ->
+  window.location = '/algorithms/about'
+
 dance = (genes, durations) ->
-  return if _.isEmpty(durations)
-  return if _.isEmpty(genes)
+  return about() if _.isEmpty(durations) || _.isEmpty(genes)
 
   duration = _.first(durations)
   gene = _.sample genes
@@ -34,7 +36,7 @@ dance = (genes, durations) ->
     $('textarea').fadeIn 400, ->
       setTimeout ->
         dance _.without(genes, gene), _.rest(durations)
-      , duration * 100
+      , duration * 10
 
 getMaxGeneCount = (genes) ->
   max_gene = _.max genes, (gene) -> gene.artworks_count + gene.artists_count
