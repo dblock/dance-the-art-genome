@@ -10,12 +10,15 @@ dance = (genes, durations) ->
 
   duration = _.first(durations)
   gene = _.sample genes
-  relativeSize = 200 + 1000 * (gene.artworks_count + gene.artists_count) / maxGeneCount
+
+  relativeSize = 400 + 1000 * (gene.artworks_count + gene.artists_count) / maxGeneCount
+  rotation = _.random(0, 360)
 
   $('textarea').fadeOut 400, ->
     $('textarea')
       .val("#{gene.name}")
       .css('font-size', "#{relativeSize}%")
+      .css('transform', "rotate(#{rotation}deg)")
     $('textarea').fadeIn 400, ->
       setTimeout ->
         dance _.without(genes, gene), _.rest(durations)
