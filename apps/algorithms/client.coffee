@@ -14,7 +14,6 @@ dance = (genes, durations) ->
   gene = _.sample genes
 
   relativeSize = 400 + 1000 * (gene.artworks_count + gene.artists_count) / maxGeneCount
-  rotation = _.random(0, 360)
 
   $count = null
 
@@ -22,7 +21,7 @@ dance = (genes, durations) ->
     $('textarea')
       .val("#{gene.name}")
       .css('font-size', "#{relativeSize}%")
-      .css('transform', "rotate(#{rotation}deg)")
+      .css('z-index', '0')
 
     $("#artworks_count_#{gene.artworks_count}")
       .addClass('selected')
@@ -30,6 +29,7 @@ dance = (genes, durations) ->
       .fadeIn 400, ->
       $("#artists_count_#{gene.artists_count}")
         .addClass('selected')
+        .css('z-index', '-1')
         .fadeIn 400
         .hide()
 
@@ -53,6 +53,7 @@ fillNumbers = (genes) ->
     number
       .css('transform', "rotate(#{rotation}deg)")
       .css('font-size', "#{relativeSize}%")
+      .css('z-index', '-2')
 
     $numbers.append(number)
 
@@ -62,6 +63,7 @@ fillNumbers = (genes) ->
     number
       .css('transform', "rotate(#{rotation}deg)")
       .css('font-size', "#{relativeSize}%")
+      .css('z-index', '-2')
 
     $numbers.append(number)
 
