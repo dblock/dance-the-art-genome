@@ -60,7 +60,7 @@ fillNumbers = (genes) ->
 
     relativeSize = 150 + 1000 * gene.artists_count / maxGeneCount
     rotation = _.random(0, 360)
-    number = $("<div class='number' id='artists_count_#{gene.artworks_count}'>#{gene.artists_count}</div>")
+    number = $("<div class='number' id='artists_count_#{gene.artists_count}'>#{gene.artists_count}</div>")
     number
       .css('transform', "rotate(#{rotation}deg)")
       .css('font-size', "#{relativeSize}%")
