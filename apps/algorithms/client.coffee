@@ -25,13 +25,14 @@ dance = (genes, durations) ->
 
     $("#artworks_count_#{gene.artworks_count}")
       .addClass('selected')
+      .css('z-index', '-1')
       .hide()
       .fadeIn 400, ->
       $("#artists_count_#{gene.artists_count}")
         .addClass('selected')
         .css('z-index', '-1')
-        .fadeIn 400
         .hide()
+        .fadeIn 400
 
     $('textarea').fadeIn 400, ->
       setTimeout ->
