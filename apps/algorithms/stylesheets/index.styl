@@ -5,7 +5,6 @@ global-reset()
 
 body
   color black
-  padding 10px 100px
   line-height 1.4em
 
 html, body
@@ -48,8 +47,18 @@ textarea
     color: #999
 
 #about
-  font-size: 20px
+  -webkit-animation: fadein 2s;
+  font-size: 30px
   font-family: "Futura"
   padding-left: 150px
+  p
+    line-height: 1.5em
   a
     text-decoration: none
+  h1
+    font-size: 40px
+    line-height: 2em
+
+@keyframes fadein
+  from { opacity: 0 }
+  to   { opacity: 1 }
